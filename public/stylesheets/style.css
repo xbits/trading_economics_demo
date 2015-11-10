@@ -1,0 +1,16 @@
+body {
+  padding: 10px 60px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #DDF;
+}
+
+button, select, input{
+  margin-right: 10px;
+  /*margin-bottom: 10px;*/
+}
+a {
+  color: #00B7FF;
+}
+.greyed{
+  color: #999;
+}

@@ -1,0 +1,33 @@
+extends layout
+block head
+  script(src='/javascripts/finance_demo.js')
+  script(src='/javascripts/highcharts.js')
+block content
+  h1= title
+  div.greyed(style='padding:4px;')
+    | Select some data to load using the form bellow.
+    br
+    | The data displayed is all fake!
+    br
+    | To add some flavour a random-ish sequence is added to each series since they all have the same values (USA GDP)
+  #request-form
+    div(style='display: table; padding-bottom:10px;')
+      div(style='text-align:center; display: inline; float: left;')
+        label.control-label Country
+        div(style='')
+          select#sCountries(data-method='country', style='min-width:250px;')
+            option Loadding Countries..
+      div(style='text-align:center; display: inline; float: left;')
+        label.control-label Indicator
+        div(style='')
+          select#sIndicators(data-method='indicator', style='min-width:250px;')
+            option Loading Indicators..
+      div(style='text-align:center; display: inline; float: left;')
+        label.control-label
+        div(style='padding-top:18px;')
+          button#addDataBtn.btn.btn-default(type='submit', data-format='all') Add data
+      div(style='text-align:center; display: inline; float: left;')
+        label.control-label
+        div(style='padding-top:18px;')
+          button#clearAllBtn.btn.btn-default(type='submit', data-format='all') Clear Data
+  #plotContainer(style='width:100%; height:400px;')
