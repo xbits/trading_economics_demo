@@ -54,8 +54,9 @@ $(function(){
     });
 
     $('#clearAllBtn').on('click', function (e) {
-        chart.series = [];
-        chart.redraw();
+        while(chart.series.length > 0)
+            chart.series[0].remove(true);
+        
     });
 
     function setLoadingState(isLoading){
